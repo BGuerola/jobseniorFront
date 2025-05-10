@@ -4,6 +4,7 @@ WORKDIR /app
 
 # 1. Copia archivos de dependencias primero (para cachear)
 COPY package.json package-lock.json ./
+RUN npm install
 RUN npm ci --silent
 
 # 2. Copia el resto y construye
