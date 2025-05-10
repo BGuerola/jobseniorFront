@@ -26,5 +26,5 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # 4. Permisos (opcional pero recomendado)
 RUN chmod -R 755 /usr/share/nginx/html
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Inyecta variables de entorno en tiempo de ejecución
+CMD ["sh", "-c", "envsubst '${BACKEND_URL}' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
