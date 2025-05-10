@@ -10,6 +10,10 @@
     "serve:ssr:jobsenior": "node dist/jobsenior/server/server.mjs"
   },
   "private": true,
+    "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=9.5.1"
+  },
   "dependencies": {
     "@angular/common": "^17.0.0",
     "@angular/compiler": "^17.0.0",
