@@ -15,12 +15,12 @@ export class LoginService {
 
   login(user: { nombre: string; contrasena: string }): Observable<Inscrito> {
     //return this.http.post<Inscrito>("http://localhost:8080/api/inscritos/login", user);
-    return this.http.post<Inscrito>('https://jobsenior.up.railway.app/api/inscritos/login', user);
+    return this.http.post<Inscrito>('https://jobsenior.up.railway.app/inscritos/login', user);
   }
 
   register(user: { nombre: string; contrasena: string }): Observable<Inscrito> {
     //return this.http.post<Inscrito>("http://localhost:8080/api/inscritos/register", user);
-    return this.http.post<Inscrito>('https://jobsenior.up.railway.app/api/inscritos/register', user);
+    return this.http.post<Inscrito>('https://jobsenior.up.railway.app/inscritos/register', user);
   }
 
   setLoginCookies(tipo: string, id: number) {
