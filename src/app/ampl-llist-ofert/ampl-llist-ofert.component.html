@@ -1,0 +1,69 @@
+
+<div class="alinear">
+       <div class="columna2">
+        <label for="fecha">Fecha</label>
+        <input class="input2" type="text" [value]="oferta?.fecha || 'Sin Fecha'" readonly>
+      </div>
+
+      <div class="columna2">
+        <label for="empresa">Empresa</label>
+        <input class="input2"type="text" [value]="oferta?.empresa?.nombre || 'Sin empresa'" readonly>
+      </div>
+
+      <div class="columna2">
+        <label for="nompuesto">Nombre Puesto</label>
+        <input class="input2"type="text" [value]="oferta?.profesion?.nombreprofesion || 'Sin puesto'" readonly>
+      </div>
+
+      <div class="columna2">
+        <label for="provincia">Provincia</label>
+        <input class="input2"type="text" [value]="oferta?.provincia?.nombreprovincia || 'Sin provincia'" readonly>
+      </div>
+
+      <div class="columna2">
+        <label for="entrar">&nbsp;</label>
+        <button (click)="iraInscripcion()">Inscribirse</button>
+      </div>
+</div>
+
+<div style="height: 40px;"></div>
+
+<div class="contenedor2">
+  <div class="columna">
+    <label for="presentacion">Descripción de la Oferta </label>
+    <div>
+      <textarea id="presentacion" name="presentacion" [innerHTML]="oferta?.descripcion || 'Sin descripción'" readonly></textarea>
+    </div>
+  </div>
+</div>
+
+<div style="height: 30px;"></div>
+
+<div *ngIf="esValido === false" class="error-message">
+  Para inscribirte has de loguearte como candidato. ¡Gracias!
+</div>
+
+<form *ngIf="esValido === true" class="form-horizontal2">
+    <h2 class="titulo-formulario">Inscripción a la oferta</h2>
+
+    <div class="contenedor">
+      <div class="columna">
+        <label for="presentacion">Carta de motivación</label>
+        <div>
+          <textarea id="presentacion" name="presentacion"
+            placeholder="Cuenta tu motivación para participar en el proceso, una breve descripción de ti mismo y por qué crees que eres un buen candidato"
+            [(ngModel)]="postulacion.motivacion">
+          </textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <div class="columna boton-contenedor">
+        <button id="entrar" name="entrar" class="btn btn-primary" (click)="enviarPostulacion()">
+          <strong>Inscribirse</strong>
+        </button>
+      </div>
+    </div>
+</form>
+

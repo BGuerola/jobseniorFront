@@ -1,0 +1,18 @@
+<h3 style="text-align: center;">Ofertas de trabajo publicadas</h3>
+
+<div class="alinear">
+  <label class="titol" for="fecha">Fecha</label>
+  <label class="titol" for="nompuesto">Nombre Puesto</label>
+  <label class="titol" for="provincia">Provincia</label>
+  <label class="titol" for="boton">&nbsp;&nbsp;</label>
+</div>
+
+
+<div  *ngFor="let oferta of puestosofertados" class="alinear" background-color: #dad5d5;>
+
+  <label class="linees">{{ oferta.fecha }}</label>
+  <label class="linees">{{ oferta.profesion.nombreprofesion }}</label>
+  <label class="linees">{{ oferta.provincia.nombreprovincia }}</label>
+  <label class="linees"><button *ngIf="oferta.idoferta !== null && oferta.idoferta !== undefined" (click)="irAGestio(oferta.idoferta)">GESTIONAR</button></label>
+
+</div>

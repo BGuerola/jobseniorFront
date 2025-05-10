@@ -1,0 +1,38 @@
+<div class="register">
+  <form class="custom-form" method="post">
+    <h1>Registro</h1>
+    <input
+      type="username"
+      [(ngModel)]="username"
+      name="username"
+      placeholder="username"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="password"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="confirmPassword"
+      name="password"
+      placeholder="Repeat the password"
+      required="required"
+    />
+    <div>
+      <label for="type">Tipo</label>
+      <select id="type" [(ngModel)]="type" name="type" required>
+        <option value="empresa">empresa</option>
+        <option value="candidato">candidato</option>
+      </select>
+    </div>
+
+    <button type="submit" (click)="register()">Register</button>
+  </form>
+</div>
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

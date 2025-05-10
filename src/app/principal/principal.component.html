@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body id="body">
+
+<app-header></app-header>
+
+<nav>
+  <div class="menuitem">
+    <a *ngIf="tipoUsuario === 'candidato'" routerLink="/cand">Página candidatos</a>
+    <a *ngIf="tipoUsuario === 'empresa'" routerLink="/emp">Página empresas</a>
+  </div>
+</nav>
+
+<main>
+
+<div style="height: 60px;"></div>
+
+<div>
+  <app-filtre-ofertes
+    *ngIf="vista === 'filtre-ofertes'"
+    (cambiarComponente)="cambiarVista($event)">
+  </app-filtre-ofertes>
+
+  <app-ampl-llist-ofert
+    *ngIf="vista === 'ampl-llist-ofert'"
+    [oferta]="ofertaSeleccionada">
+  </app-ampl-llist-ofert>
+</div>
+
+</main>
+
+<app-footer></app-footer>
+
+</body>
+</html>

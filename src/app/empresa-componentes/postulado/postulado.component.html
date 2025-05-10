@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="full-page">
+  <header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img alt="logo" title="Senior Talent" src="../../assets/TALENT_SENIOR_sense_fondo.png" width="100px"/>
+  </header>
+  <nav>
+    <div class="menuitem">
+      <a routerLink="/">Página principal</a>
+      <a routerLink="/emp">Página empresas</a>
+    </div>
+  </nav>
+
+  <main>
+
+<div style="height: 30px;"></div>
+
+<h3 style="text-align: center;">Candidatos postulados a la oferta de trabajo</h3>
+
+  <div class="form-horizontal">
+
+  <div class = "contenedor">
+
+      <div class="columna">
+        <label for="nombre">Nombre</label>
+        <div>
+        <input id="nombre" name="nombre" type="text" placeholder="nombre" [(ngModel)]="candidato.nombre">
+        </div>
+      </div>
+
+      <div class="columna">
+        <label for="email">email</label>
+        <div>
+        <input id="email" name="email" type="text" placeholder="email" [(ngModel)]="candidato.correo">
+        </div>
+      </div>
+
+      <div class="columna">
+        <label for="link">link</label>
+        <div>
+        <input id="link" name="link" type="text" placeholder="link" [(ngModel)]="candidato.url" >
+        </div>
+      </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="columna">
+      <label for="presentacion">Presentación</label>
+      <div>
+        <textarea
+          id="presentacion"
+          name="presentacion"
+          rows="10"
+          placeholder="Escribe una breve presentación sobre ti, tu experiencia, intereses o cualquier información relevante..."
+          [(ngModel)]="candidato.descripcion">
+        </textarea>
+      </div>
+    </div>
+  </div>
+
+    <div class="contenedor">
+    <div class="columna">
+      <label for="presentacion">Carta de motivación</label>
+      <div>
+        <textarea id="presentacion" name="presentacion"
+          [(ngModel)]="postulacion.motivacion ">
+        </textarea>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="contenedor">
+      <div class="estado">
+        <label
+          for="nvisto"
+          (click)="actualizarEstado('NO VISTO')"
+          [ngClass]="{ 'estado-seleccionado': estadoSeleccionado === 'NO VISTO' }">
+          NO VISTO
+        </label>
+        <label
+          for="visto"
+          (click)="actualizarEstado('VISTO')"
+          [ngClass]="{ 'estado-seleccionado': estadoSeleccionado === 'VISTO' }">
+          VISTO
+        </label>
+        <label
+          for="aceptado"
+          (click)="actualizarEstado('ACEPTADO')"
+          [ngClass]="{ 'estado-seleccionado': estadoSeleccionado === 'ACEPTADO' }">
+          ACEPTADO
+        </label>
+        <label
+          for="rechazado"
+          (click)="actualizarEstado('RECHAZADO')"
+          [ngClass]="{ 'estado-seleccionado': estadoSeleccionado === 'RECHAZADO' }">
+          RECHAZADO
+        </label>
+        <label class="linees">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label class="linees" style="color: black;">{{ estadoSeleccionado || postulacion.estado }}</label>
+      </div>
+    </div>
+
+</div>
+<div style="height: 30px;"></div>
+
+  </main>
+
+<app-footer></app-footer>
+
+</body>
+</html>

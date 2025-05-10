@@ -1,0 +1,132 @@
+/*
+colores de senior talent
+negre: rgb(1, 1, 0)
+roig: rgb(170, 32, 45)
+gris: rgb(96, 88, 85)
+*/
+
+html{
+  font: size 62.5%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%
+}
+
+header {
+  padding:0.5rem;
+  background:rgb(83, 80, 80);
+  color:black;
+  font-size: 2rem;
+  font-weight: bold;
+ }
+
+nav {
+  padding:0.5 rem;
+  background-color: rgb(170, 32, 45);
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content:space-evenly;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+nav a:hover {
+background: grey;
+color: black;
+top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 60%;
+  margin-left: 20vw;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: rgb(247, 247, 247);
+  padding: 20px;
+}

@@ -1,0 +1,22 @@
+<header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+  <img alt="logo" title="Senior Talent" src="../../assets/TALENT_SENIOR_sense_fondo.png" width="100px"/>
+  <div style="font-size: 14px; display: flex; gap: 8px; align-items: center;">
+    <a class="h6"
+       style="text-decoration: none; color: inherit; cursor: pointer; transition: color 0.3s;"
+       (click)="openDialog()">
+      Log in
+    </a>
+    <span class="h6 text-primary">|</span>
+    <a class="h6"
+    style="text-decoration: none; color: inherit; cursor: pointer; transition: color 0.3s;"
+    (click)="borrarSesion()">
+   Log out
+ </a>
+ <span class="h6 text-primary">|</span>
+    <a class="h6"
+       style="text-decoration: none; color: inherit; cursor: pointer; transition: color 0.3s;"
+       (click)="openRegisterDialog()">
+      Register
+    </a>
+  </div>
+</header>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="full-page">
+  <header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img alt="logo" title="Senior Talent" src="../../assets/TALENT_SENIOR_sense_fondo.png" width="100px"/>
+  </header>
+  <nav>
+    <div class="menuitem">
+      <a routerLink="/">Página principal</a>
+      <a routerLink="/emp">Página empresas</a>
+    </div>
+  </nav>
+
+  <main>
+
+<div style="height: 30px;"></div>
+<div class="form-horizontal">
+
+  <div class = "contenedor">
+  <div class="columna">
+   <label for="fecha">Fecha</label>
+   <input class="input2" type="text" [value]="oferta?.fecha || 'Sin Fecha'" readonly>
+ </div>
+
+ <div class="columna">
+   <label for="empresa">Empresa</label>
+   <input class="input2"type="text" [value]="oferta?.empresa?.nombre || 'Sin empresa'" readonly>
+ </div>
+
+ <div class="columna">
+   <label for="nompuesto">Nombre Puesto</label>
+   <input class="input2"type="text" [value]="oferta?.profesion?.nombreprofesion || 'Sin puesto'" readonly>
+ </div>
+
+ <div class="columna">
+   <label for="provincia">Provincia</label>
+   <input class="input2"type="text" [value]="oferta?.provincia?.nombreprovincia || 'Sin provincia'" readonly>
+ </div>
+
+</div>
+
+<div class="contenedor">
+  <div class="columna">
+  <label for="presentacion">Descripción de la Oferta </label>
+    <div>
+    <textarea id="presentacion" name="presentacion" [innerHTML]="oferta?.descripcion || 'Sin descripción'" readonly></textarea>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div style="height: 30px;"></div>
+
+<h3 style="text-align: center;">Candidatos postulados a la oferta de trabajo</h3>
+
+<div *ngFor="let candidato of candidatospostulados" class="alinear" background-color: #dad5d5;>
+
+  <label class="linees">{{ candidato.nombre }}</label>
+  <label class="linees">{{ candidato.correo }}</label>
+  <label class="linees">{{ candidato.url }}</label>
+  <label class="linees">
+    <button
+      (click)="irAPostulado(oferta?.idoferta!, candidato.idcandidato!)">
+      GESTIONAR
+    </button>
+  </label>
+
+</div>
+
+<div style="height: 30px;"></div>
+
+  </main>
+
+<app-footer></app-footer>
+
+</body>
+</html>

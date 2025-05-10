@@ -1,0 +1,13 @@
+# Node / Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# IDEs
+*.iml
+.vscode/             # Visual Studio Code
+
+# Logs y configuraciones
+*.log
+.env
+.DS_Store

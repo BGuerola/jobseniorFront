@@ -1,0 +1,27 @@
+<h3 style="text-align: center;">Ofertas en las que estoy inscrito</h3>
+
+<div class="alinear">
+  <label class="titol" for="fecha">Fecha</label>
+  <label class="titol" for="empresa">Empresa</label>
+  <label class="titol" for="nompuesto">Nombre Puesto</label>
+  <label class="titol" for="provincia">Provincia</label>
+  <label class="titol" for="boton">&nbsp;&nbsp;</label>
+</div>
+
+
+<div  *ngFor="let oferta of ofertasInscrito" class="alinear" background-color: #dad5d5;>
+
+  <label class="linees">{{ oferta.fecha }}</label>
+  <label class="linees">{{ oferta.empresa.nombre }}</label>
+  <label class="linees">{{ oferta.profesion.nombreprofesion }}</label>
+  <label class="linees">{{ oferta.provincia.nombreprovincia }}</label>
+
+  <label class="linees">
+    <button
+      [disabled]="oferta.idoferta === null || oferta.idoferta === undefined"
+      (click)="irAAmpliar(oferta.idoferta!)">
+      AMPLIAR
+    </button>
+  </label>
+
+</div>

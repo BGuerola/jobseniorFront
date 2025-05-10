@@ -1,0 +1,74 @@
+
+
+<h1>OFERTA DE PUESTO DE TRABAJO</h1>
+
+<section>
+
+<div *ngIf="oferta">
+
+  <form class="form-horizontal" (ngSubmit)="guardarOferta()">
+
+  <!-- Form Name -->
+
+  <div class = "contenedor">
+      <div class="columna">
+        <label for="nombre">Fecha</label>
+        <div>
+        <input id="nombre" name="nombre" type="text" [value]="oferta.fecha || 'Sin Fecha'" readonly>
+        </div>
+      </div>
+
+      <div class="columna">
+        <label for="localidad">Empresa</label>
+        <div>
+        <input id="localidad" name="localidad" type="text" [value]="oferta.empresa.nombre || 'Sin empresa'" readonly>
+        </div>
+      </div>
+
+  </div>
+
+  <div class = "contenedor">
+      <div class="columna">
+        <label for="nombre">Puesto de trabajo</label>
+        <select [(ngModel)]="oferta.profesion.idprofesion" name="profesion" required>
+          <option *ngFor="let profesion of profesiones" [value]="profesion.idprofesion">
+            {{ profesion.nombreprofesion }}
+          </option>
+        </select>
+      </div>
+
+      <div class="columna">
+        <label for="localidad">Provincia</label>
+        <select [(ngModel)]="oferta.provincia.idprovincia" name="provincia" required>
+          <option *ngFor="let provincia of provincias" [value]="provincia.idprovincia">
+            {{ provincia.nombreprovincia }}
+          </option>
+        </select>
+      </div>
+
+  </div>
+
+  <div class="contenedor">
+    <div class="columna">
+      <label for="presentacion">Funciones y condiciones laborales</label>
+      <textarea
+        id="presentacion"
+        name="presentacion"
+        rows="10"
+        placeholder="Describe las funciones y las condiciones laborales que sean de interés para los candidatos"
+        [(ngModel)]="oferta.descripcion" name="descripcion" required>
+      </textarea>
+    </div>
+  </div>
+
+
+  <button type="submit">Guardar Oferta</button>
+
+  </form>
+
+</div>
+  <div *ngIf="!oferta">
+    <p>No se ha recibido la empresa. Por favor, vuelve atrás.</p>
+  </div>
+
+</section>

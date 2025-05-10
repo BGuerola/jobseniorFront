@@ -1,0 +1,101 @@
+.form-horizontal2 {
+  background-color: #dad5d5;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%; /* Ajusta según el tamaño deseado */
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.columna {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  resize: none;
+  box-sizing: border-box;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+.contenedor2 {
+  display: flex;
+  flex-direction: row;
+  width: 60%; /* Ajusta según el ancho deseado */
+  margin-left: 20vw; /* 25% del ancho de la ventana */
+}
+
+
+.columna2 {
+  width: 100%;
+  padding: 1px 20px;
+  border-radius: 5px;
+}
+
+.alinear {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /*para botones*/
+  margin: 0 auto;
+  box-sizing: border-box; /*Incluir padding y borde en el tamaño total*/
+  border-radius: 10px;
+  width: 60%; /* Ajusta según el ancho deseado */
+  margin-left: 20vw; /* 25% del ancho de la ventana */
+}
+
+.input2 {
+  border: none;
+  background-color: transparent;
+  outline: none; /* Elimina el borde de enfoque al hacer clic */
+}
+
+.estado label {
+  width: 100%;
+  font-size: 1.5em; /* Letra grande (puedes ajustar el valor) */
+  font-weight: bold; /* Resaltado */
+  padding: 10px; /* Añade un poco de espacio alrededor del texto */
+  border-radius: 5px; /* Bordes ligeramente redondeados para un aspecto más suave */
+  color: #f8f8f8; /* Color de texto claro para contrastar con el fondo mate */
+  text-align: center; /* Centra el texto dentro de la etiqueta */
+  flex-grow: 1; /* Permite que las etiquetas se expandan para ocupar el espacio disponible */
+  margin: 5px; /* Espacio entre las etiquetas */
+}
+
+.estado label[for="nvisto"] {
+  background-color: #808080; /* Gris mate */
+}
+
+.estado label[for="visto"] {
+  background-color: #4682B4; /* Azul mate (Steel Blue) */
+}
+
+.estado label[for="aceptado"] {
+  background-color: #2E8B57; /* Verde mate (Sea Green) */
+}
+
+.estado label[for="rechazado"] {
+  background-color: #B22222; /* Rojo mate (Firebrick) */
+}

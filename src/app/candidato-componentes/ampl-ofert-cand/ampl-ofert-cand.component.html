@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="full-page">
+  <header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img alt="logo" title="Senior Talent" src="../../assets/TALENT_SENIOR_sense_fondo.png" width="100px"/>
+  </header>
+  <nav>
+    <div class="menuitem">
+      <a routerLink="/">Página principal</a>
+      <a routerLink="/cand">Página candidatos</a>
+    </div>
+  </nav>
+  <main>
+
+<div style="height: 60px;"></div>
+<div class="alinear">
+  <div class="columna2">
+   <label for="fecha">Fecha</label>
+   <input class="input2" type="text" [value]="oferta?.fecha || 'Sin Fecha'" readonly>
+ </div>
+
+ <div class="columna2">
+   <label for="empresa">Empresa</label>
+   <input class="input2"type="text" [value]="oferta?.empresa?.nombre || 'Sin empresa'" readonly>
+ </div>
+
+ <div class="columna2">
+   <label for="nompuesto">Nombre Puesto</label>
+   <input class="input2"type="text" [value]="oferta?.profesion?.nombreprofesion || 'Sin puesto'" readonly>
+ </div>
+
+ <div class="columna2">
+   <label for="provincia">Provincia</label>
+   <input class="input2"type="text" [value]="oferta?.provincia?.nombreprovincia || 'Sin provincia'" readonly>
+ </div>
+
+</div>
+
+<div class="contenedor2">
+<div class="columna">
+<label for="presentacion">Descripción de la Oferta </label>
+<div>
+ <textarea id="presentacion" name="presentacion" [innerHTML]="oferta?.descripcion || 'Sin descripción'" readonly></textarea>
+</div>
+</div>
+</div>
+
+<!-- <div style="height: 30px;"></div> -->
+
+<form class="form-horizontal2">
+<h2 class="titulo-formulario">Inscripción a la oferta</h2>
+
+<div class="contenedor" *ngIf="postulacion">
+ <div class="columna">
+   <label for="presentacion">Carta de motivación</label>
+   <div>
+     <textarea id="presentacion" name="presentacion"
+        [(ngModel)]="postulacion.motivacion" readonly>
+     </textarea>
+   </div>
+ </div>
+</div>
+
+</form>
+
+<div class="alinear"*ngIf="postulacion">
+  <div class="estado">
+    <!-- Mostrar el label solo si el texto del label coincide con postulacion.estado -->
+    <label *ngIf="postulacion.estado === null" for="nvisto">NO VISTO</label>
+    <label *ngIf="postulacion.estado === 'VISTO'" for="visto">VISTO</label>
+    <label *ngIf="postulacion.estado === 'ACEPTADO'" for="aceptado">ACEPTADO</label>
+    <label *ngIf="postulacion.estado === 'RECHAZADO'" for="rechazado">RECHAZADO</label>
+  </div>
+</div>
+
+<div style="height: 30px;"></div>
+
+  </main>
+  <footer style="display: flex; align-items: center; justify-content: flex-start; gap: 20px; padding-right: 40px;">
+    <div>
+      <img alt="logo" title="Senior Talent" src="../../assets/TALENT_SENIOR_sense_fondo.png" width="240px"/>
+    </div>
+    <div style="font-size: 16px; width: 75%; padding-left: 10px;">
+      <p>Queremos aportar soluciones efectivas a la optimización del <strong>talento de profesionales</strong> mayores de 50 años.</p>
+      <p>Impulsamos el calce perfecto entre las necesidades de talento del mundo empresarial, principalmente de PYMES y Startups con el activo desaprovechado de profesionales sobre 50 años que se encuentran en condiciones de entregar todo su conocimiento y experiencia, en formatos flexibles y al alcance del negocio.</p>
+    </div>
+  </footer>
+</body>
+</html>

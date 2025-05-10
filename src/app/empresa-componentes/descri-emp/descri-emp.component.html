@@ -1,0 +1,66 @@
+<h1>PAGINA EMPRESA</h1>
+
+<form class="form-horizontal">
+<fieldset>
+
+<div class = "contenedor">
+    <div class="columna">
+      <label for="nombre">Nombre Empresa</label>
+      <div>
+      <input id="nombre" name="nombre" type="text" placeholder="Nombre Empresa" [(ngModel)]="empresa.nombre">
+      </div>
+    </div>
+
+    <div class="columna">
+      <label for="url">URL</label>
+      <div>
+      <input id="url" name="url" type="text" placeholder="link" [(ngModel)]="empresa.url">
+
+      </div>
+    </div>
+</div>
+
+<div class="contenedor">
+  <div class="columna">
+    <label for="presentacion">Dirección Empresa</label>
+    <div>
+      <input id="direccion" name="direccion" type="text" placeholder="Dirección Empresa" [(ngModel)]="empresa.direccion">
+    </div>
+  </div>
+</div>
+
+<div class="contenedor">
+  <div class="columna">
+    <label for="presentacion">Presentación</label>
+    <textarea
+      id="presentacion"
+      name="presentacion"
+      rows="10"
+      placeholder="Escribe una breve presentación de la empresa, sector, valores, posicionamiento en el mercado o cualquier información relevante..."
+      [(ngModel)]="empresa.descripcion">
+    </textarea>
+  </div>
+
+  <div class="contenedor">
+    <div class="columna">
+      <label for="entrar">&nbsp;</label>
+      <button type="button" class="btn btn-primary"
+        (click)="guardar()">
+        Editar
+      </button>
+    </div>
+  </div>
+  <div class="contenedor">
+    <div class="columna">
+      <label for="entrar">&nbsp;</label>
+      <button type="button" class="btn btn-primary"
+        (click)="crearoferta(empresa)">
+        Crear oferta
+      </button>
+    </div>
+  </div>
+</div>
+
+</fieldset>
+
+</form>

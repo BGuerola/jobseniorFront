@@ -1,0 +1,14 @@
+.texto {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.enlaces a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.enlaces a:hover {
+  text-decoration: underline;
+}

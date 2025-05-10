@@ -1,0 +1,83 @@
+  <h3 style="text-align: center;">Filtro de búsqueda de ofertas de empleo</h3>
+  <form class="form-horizontal2">
+    <fieldset>
+
+      <div class="contenedor">
+
+        <div class="columna">
+          <label for="fecha">Fecha</label>
+          <select id="fecha" [(ngModel)]="filtros.fecha" name="fecha">
+            <option value="">Todas las fechas</option>
+            <option *ngFor="let fecha of fechas" [value]="fecha">{{ fecha }}</option>
+          </select>
+        </div>
+
+        <div class="columna">
+          <label for="empresa">Empresa</label>
+          <select id="empresa" [(ngModel)]="filtros.empresa" name="empresa">
+            <option value="">Todas las empresas</option>
+            <option *ngFor="let empresa of empresas" [value]="empresa">{{ empresa }}</option>
+          </select>
+        </div>
+
+        <div class="columna">
+          <label for="nompuesto">Nombre Puesto</label>
+          <select id="nompuesto" [(ngModel)]="filtros.profesion" name="nompuesto">
+            <option value="">Todos los puestos</option>
+            <option *ngFor="let profesion of profesiones" [value]="profesion">{{ profesion }}</option>
+          </select>
+        </div>
+
+        <div class="columna">
+          <label for="provincia">Provincia</label>
+          <select id="provincia" [(ngModel)]="filtros.provincia" name="provincia">
+            <option value="">Todas las provincias</option>
+            <option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</option>
+          </select>
+        </div>
+
+        <div class="columna">
+          <label for="entrar">&nbsp;</label>
+          <button type="button" class="btn btn-primary" (click)="aplicarFiltro()">
+            Aplicar filtro
+          </button>
+        </div>
+
+      </div>
+
+    </fieldset>
+  </form>
+
+  <div style="height: 30px;"></div>
+
+  <form class="form-horizontal" >
+    <fieldset>
+
+    <div *ngFor="let oferta of ofertasFiltradas" class="contenedor">
+
+      <div class="columna2">
+        <input class="input2" type="text" [value]="oferta.fecha" readonly>
+      </div>
+
+      <div class="columna2">
+        <input class="input2"type="text" [value]="oferta.empresa.nombre || 'Sin empresa'" readonly>
+      </div>
+
+      <div class="columna2">
+        <input class="input2"type="text" [value]="oferta.profesion.nombreprofesion || 'Sin puesto'" readonly>
+      </div>
+
+      <div class="columna2">
+        <input class="input2"type="text" [value]="oferta.provincia.nombreprovincia || 'Sin provincia'" readonly>
+      </div>
+
+      <div class="columna2">
+        <button (click)="irAmpList(oferta)">Ampliar oferta</button>
+      </div>
+
+    </div>
+
+  </fieldset>
+  </form>
+
+  <div style="height: 30px;"></div>

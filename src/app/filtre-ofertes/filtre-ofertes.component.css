@@ -1,0 +1,26 @@
+.form-horizontal2 {
+  background-color: #dad5d5;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+}
+
+.columna {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.columna2 {
+  width: 100%;
+  padding: 1px 20px;
+  border-radius: 5px;
+}
+
+.input2 {
+  border: none;
+  background-color: transparent;
+  outline: none; /* Elimina el borde de enfoque al hacer clic */
+}
