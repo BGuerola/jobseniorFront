@@ -9,7 +9,8 @@ RUN npm run build -- --configuration=production
 # Etapa 2: Servidor Nginx
 FROM nginx:alpine
 #RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build /app/dist/jobsenior /usr/share/nginx/html
+COPY --from=build /app/dist/jobsenior/browser /usr/share/nginx/html/browser
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN chmod -R 755 /usr/share/nginx/html
 
