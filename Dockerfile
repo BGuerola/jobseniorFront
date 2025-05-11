@@ -1,8 +1,8 @@
 # Etapa 1: Build de Angular
 FROM node:18 AS build
 WORKDIR /app
-#COPY package.json package-lock.json ./
-RUN npm ci --silent
+COPY package.json package-lock.json ./
+RUN npm install
 COPY . .
 RUN npm run build -- --configuration=production
 
