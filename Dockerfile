@@ -14,6 +14,6 @@ COPY --from=build /app/dist/jobsenior/browser /usr/share/nginx/html/browser
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN chmod -R 755 /usr/share/nginx/html
 
-EXPOSE 80
+#EXPOSE 80
 
 CMD ["sh", "-c", "envsubst '${BACKEND_URL}' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
