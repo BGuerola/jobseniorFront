@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://jobsenior.up.railway.app',
+    apiUrl: 'https://jobseniorback.railway.internal:8080/api',
     enableDebug: false
   };
